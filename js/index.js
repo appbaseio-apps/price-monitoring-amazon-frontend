@@ -44,11 +44,11 @@ function getCurrentTabUrl(callback) {
 }
 
 $.urlParam = function(name, url) {
-  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(url);
-  if (results == null) {
+  var regex = new RegExp("http://www.amazon.com/([\\w-]+/)?(dp|gp/product)/(\\w+/)?(\\w{10})").exec(url);
+  if (regex == null) {
     return null;
   } else {
-    return results[1] || 0;
+    return regex[4] || 0;
   }
 }
 
