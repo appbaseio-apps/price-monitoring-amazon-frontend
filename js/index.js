@@ -128,10 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
           productDetail = data;
           $('#name').text(productDetail.name);
           $('#current_price').text(productDetail.price);
-          var imageURL;
-          for (var key in productDetail.imageurls) {
-            imageURL = productDetail.imageurls[key];
-          }
+          var imageURL = productDetail.imageURL;
           $('#img').attr('src', imageURL);
         });
       }
